@@ -111,5 +111,53 @@
 	Document: Complex structure with nested attributes(eg. JSON) list and map
 	Document Types:
 	List:Ordered List
-	Map:Unordered attributes	
+	Map:Unordered attributes
+
+####  DynamoLocal
+
+	Java
+	java -Djava.library.path=./DynamoDBLocal_lib \
+	-jar DynamoDBLocal.jar
 	
+	Docker
+	docker run -d -p 8000:8000 amazon/dynamodb-local
+
+	For using aws cli
+	aws dynamo list-tables \ --endpoint-url http://localhost:8000
+
+#### Metrics for dynamodb
+
+	Track metrics
+	Create dashboards
+	Create alarms
+	Create rules for events
+	View logs
+
+#### Metrics 
+	
+	ConsumeddReadCapacityUnits
+	ConsumedWriteCpacityUnits
+	ProvisionedReadCapacitUnits
+	ProvisionedWriteCapacityUnits
+	ReadThrottleEvents
+	SuccessfulRequetLatency
+	SystemsErrors
+	ThrottledRequests
+	UerErrors	
+	WriteThrottleEvents
+
+#### Alarms
+
+	INSUFFICIENT
+	ALARM
+	OK
+
+    Alarms have a number of key components:
+	Metric
+	Thresold
+	Period
+	Action: sns, auto scaling, ec2
+
+#### Exponential backoff
+
+	It will automatically retry if a max number of error occurs
