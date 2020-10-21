@@ -161,3 +161,19 @@
 #### Exponential backoff
 
 	It will automatically retry if a max number of error occurs
+
+
+#### Partition key or partition and sort key
+
+	Identify unique item
+	Partition key cannot be delete,modified.
+	All columns can change with differente data type,string later number,later object.
+
+#### RCU, WCU
+
+	Remember 8kb = (divide by 4) 1 block=4kb
+	Strong		= RCU for Strong consistents (2 RCU)
+	Eventual	= Strong consistence /2 = Eventual Consistent (1 RCU)
+	Transactional= Strong consistence * 2 (4 RCU)
+  
+       20 reads at 15KB per item = (16/4) = 4 * 20 = 80 RCU for strong , 40 for eventual, 160 for transactional
